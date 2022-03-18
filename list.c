@@ -29,26 +29,55 @@ Node * createNode(void * data) {
 }
 
 List * createList() {
-     return NULL;
+     List *lista=(List*) calloc(1, sizeof(List));
+  lista->head=NULL;
+  lista->current=NULL;
+  lista->tail=NULL;
+  return lista;
 }
 
 void * firstList(List * list) {
-    return NULL;
+
+if(list->head && list->head->data){
+    list->current = list->head;
+    return list->head->data;
+}
+  return NULL;
 }
 
 void * nextList(List * list) {
-    return NULL;
+  if(list->current->next && list->current->next->data){
+    list->current=list->current->next;
+    return list->current->data;
+  }
+  return NULL;
 }
 
 void * lastList(List * list) {
-    return NULL;
+  if(list->tail && list->tail->data){
+    list->current=list->tail;
+    return list->tail->data;
+  }
+  return NULL;
 }
 
 void * prevList(List * list) {
+    if(list->current->prev && list->current->prev->data){
+        list->current=list->current->prev;
+        return list->current->data;
+    }
     return NULL;
 }
 
 void pushFront(List * list, void * data) {
+    if(list->current && list->head){
+    list->current=list->head;
+    list->current->data=data;
+    }
+    else{
+        Node *new=createNode(data);
+    }
+    
 }
 
 void pushBack(List * list, void * data) {
@@ -57,6 +86,8 @@ void pushBack(List * list, void * data) {
 }
 
 void pushCurrent(List * list, void * data) {
+    list->current=list->current->next;
+    list->current->data=data;
 }
 
 void * popFront(List * list) {
@@ -70,6 +101,11 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
+    if(list->current && list->current->prev){
+        list->current->prev->next=list->current->prev;
+        list->current->next->prev=list->current->prev;
+        list->current=list->current->prev;
+    }
     return NULL;
 }
 
