@@ -46,7 +46,7 @@ if(list->head && list->head->data){
 }
 
 void * nextList(List * list) {
-  if(list->current->next && list->current->next->data){
+  if(list->current && list->current->next){
     list->current=list->current->next;
     return list->current->data;
   }
