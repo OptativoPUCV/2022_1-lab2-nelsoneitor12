@@ -71,7 +71,8 @@ void * prevList(List * list) {
 
 void pushFront(List * list, void * data) {
     if(list->current && list->head){
-        list->head->data=data;
+        list->current=list->head;
+        list->current->data=data;
     }   
 }
 
