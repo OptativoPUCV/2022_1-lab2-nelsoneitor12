@@ -62,3 +62,9 @@ list.c:92:8: error: 'popBack' defined but not used [-Werror=unused-function]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 09059f8
+Mon Mar 21 06:43:56 HSP 2022: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  9|3
+total_score: 35/70
+1b368f0
