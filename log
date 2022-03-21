@@ -178,3 +178,9 @@ list.c:131:43: error: expected ';' before 'list'
       |             ~~~~                           
 Compilation failed
 19c6cd5
+Mon Mar 21 08:04:50 HSP 2022: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  12|0
+total_score: 70/70
+389a6d6
